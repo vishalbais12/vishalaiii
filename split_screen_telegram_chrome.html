@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Screen: Telegram and Chrome</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #0078d7;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+        }
+        .section iframe {
+            flex: 1;
+            border: none;
+        }
+        .button-container {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #0078d7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Split Screen: Telegram (Left) and Chrome (Right)</div>
+    <div class="content">
+        <!-- Left Section: Telegram -->
+        <div class="section">
+            <div class="button-container">
+                <button onclick="openTelegram()">Load Telegram</button>
+            </div>
+            <iframe id="telegram-frame" src=""></iframe>
+        </div>
+        <!-- Right Section: Chrome -->
+        <div class="section">
+            <div class="button-container">
+                <button onclick="openChrome()">Load Chrome</button>
+            </div>
+            <iframe id="chrome-frame" src=""></iframe>
+        </div>
+    </div>
+    <script>
+        function openTelegram() {
+            document.getElementById('telegram-frame').src = "https://web.telegram.org/k/";
+        }
+        function openChrome() {
+            document.getElementById('chrome-frame').src = "https://www.google.com/";
+        }
+    </script>
+</body>
+</html>
